@@ -26,9 +26,8 @@ function autenticar(req, res) {
                                     res.json({
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
-                                        nome: resultadoAutenticar[0].nome,
-                                        senha: resultadoAutenticar[0].senha,
-                                        aquarios: resultadoAquarios
+                                        usuario: resultadoAutenticar[0].usuario,
+                                        senha: resultadoAutenticar[0].senha
                                     });
                                 } else {
                                     res.status(204).json({ aquarios: [] });
@@ -56,6 +55,7 @@ function cadastrar(req, res) {
     var usuario = req.body.usuarioServer;
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    console.log("OK!")
 
     // Faça as validações dos valores
     if (usuario == undefined) {
