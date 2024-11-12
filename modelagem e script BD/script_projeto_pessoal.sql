@@ -25,14 +25,6 @@ fkTopico int,
 constraint fkQuestaoTopico foreign key (fkTopico) references topico (idTopico)
 );
 
-create table log(
-idLog int primary key auto_increment,
-entrada datetime,
-saida datetime,
-fkUsuario int,
-constraint fkLogUsuario foreign key (fkUsuario) references usuario (idUsuario)
-);
-
 create table resposta(
 fkUsuario int,
 fkQuestao int,
