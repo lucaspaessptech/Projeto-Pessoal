@@ -80,6 +80,9 @@ img{
     height: 100%;
     margin-top: 0%;
     background-image: url("../assets/FundoMatemática.svg");
-    background-size: cover;
+    background-size: 100%;
     background-position: 50% 48%;
+    max-width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
 }
