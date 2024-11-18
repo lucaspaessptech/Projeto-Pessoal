@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.divTotal{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+.barraSup{
+    display: flex;
+    height: 15%;
+    font-size: 400%;
+    background-color: #FFA500;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    background-color: #FFA500;
+    min-width: 20%;
+    width: 20%;
+    height: 84%;
+    min-height: 84%;
+    display: flex;
+    flex-direction: column;
+    border: solid 3px;
+    flex: 1;
+    float: left;
+}
+.div_conteudo{
+    display: flex;
+    flex-direction: column;
+}
+h2{
+    font-size: 300%;
+    margin: 5px;
+    margin-left: 8px;
+}
+h3{
+    font-size: 225%;
+    margin: 5px;
+    margin-left: 8px;
+    font-weight: normal;
+}
+.tituloExplicacao{
+    font-size: 150%;
+}
+.divExplicacao{
+    max-width: 70%;
+    font-size: 100%;
+    margin-left: 12px;
+}
