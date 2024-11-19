@@ -64,7 +64,18 @@ h3{
 }
 .divCuriosidade{
     max-width: 27%;
+    width: 27%;
     margin: 0;
     padding: 0;
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    border-radius: 15px;
+    align-self: center;
+    min-height: 60vh;
+    justify-content: center;
+    height: 60%;
+}
+.teste{
+    max-width: 70%;
 }
