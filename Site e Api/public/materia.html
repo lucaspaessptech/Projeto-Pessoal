@@ -13,11 +13,12 @@
     <div class="menu">Aritmética</div>
     <div class="div_conteudo">
 
- <div class="teste">       <h2>ARITMÉTICA</h2>
-    <h3>Soma</h3>
+ <div class="teste">       
+    <h2 id="h2_ramo"></h2>
+    <h3 id="h3_titulo"></h3>
     <div class="divExplicacao">
         <h3 class="tituloExplicacao">Desenvolvendo o raciocínio</h3>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic, magnam numquam cupiditate esse excepturi. Fugit dolorum nulla reiciendis voluptatibus temporibus doloremque iusto fugiat voluptate minus. Ducimus blanditiis facere quia.
+        <span id="span_explicacao"></span>
     </div>
     <div class="divPratica">
         <h3 class="tituloExplicacao">Hora da prática</h3>
@@ -26,10 +27,12 @@
 <input type="radio" class="respostas" value="11" name="respostas"><label for="">A.11</label><br>
 <input type="radio" class="respostas" value="1" name="respostas"><label for="">A.1</label><br>
 <input type="radio" class="respostas" value="2" name="respostas"><label for="">A.2</label><br>
+<button onclick="verificar()">Verificar Resposta</button>
+<button onclick="carregarConteudo()">Teste</button>
     </div></div> 
         <div class="divCuriosidade">
             <h3 class="tituloExplicacao">Curiosidades sobre soma</h3>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam doloremque nobis minima ipsa delectus id quibusdam quia, aliquam voluptatum a illo ab commodi minus iusto hic inventore perferendis cupiditate? Laboriosam.
+            <span id="span_curiosidade"></span>
         </div>
     </div>
 
@@ -41,3 +44,31 @@
 </body>
 </html>
 
+<script>
+
+function carregarConteudo(){
+    fetch("/questoes/carregarConteudo", {
+        method: "GET"
+    }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+            console.log(json[0].ramo)
+            h2_ramo.innerHTML = json[0].ramo
+            h3_titulo.innerHTML = json[0].titulo
+            span_explicacao.innerHTML = json[0].explicacao
+            span_curiosidade.innerHTML = json[0].curiosidade
+        })
+    })
+}
+
+function verificar(){
+    var respostas = document.getElementsByName("respostas");
+    for(i = 0; i < respostas.length; i ++){
+        if(respostas[i].checked){
+            var resposta = respostas[i].value;
+            console.log(resposta)
+        }
+    }
+}
+
+</script>
