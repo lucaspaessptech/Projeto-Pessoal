@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/inicial.css">
 </head>
 <body>
-    <a href="cadastro.html">Cadastro</a>
+
+    <div class="divTotal">
+        <div class="barraSup">Placeholder</div>
+        <h1>A matemática tem 4 grandes Ramos sendo eles:</h1>
+        <div class="div_ramos">
+            <div class="ramos" onclick="redirecionar('aritmetica')">Aritmética</div>
+            <div class="ramos" onclick="redirecionar('algebra')">Álgebra</div>
+            <div class="ramos" onclick="redirecionar('geometria')">Geometria</div>
+            <div class="ramos" onclick="redirecionar('estatistica')">Estatística</div>
+        </div>
+    <!-- <a href="cadastro.html">Cadastro</a> -->
+
 </body>
 </html>
+
+<script>
+
+    function redirecionar(resposta){
+        if(resposta == 'aritmetica'){
+            window.location = './aritmetica.html'
+        }
+        else if(resposta == 'algebra'){
+            window.location = './algebra.html'
+        }
+        else if(resposta == 'geometria'){
+            window.location = './geometria.html'
+        }
+        else if(resposta == 'estatistica'){
+            window.location = './estatistica.html'
+        }
+    }
+</script>

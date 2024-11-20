@@ -18,8 +18,6 @@ function autenticar(req, res) {
                     
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
-                        console.log("OK");
-                                    console.log("OK2")
                                     res.json({
                                         id: resultadoAutenticar[0].id,
                                         email: resultadoAutenticar[0].email,
