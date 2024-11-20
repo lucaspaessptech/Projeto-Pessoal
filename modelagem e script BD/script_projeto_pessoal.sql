@@ -19,7 +19,6 @@ curiosidade varchar(200)
 
 create table questao(
 idQuestao int primary key auto_increment,
-titulo varchar(45),
 conteudo varchar(45),
 resposta varchar(15),
 opcao1 varchar(45),
@@ -39,3 +38,6 @@ constraint fkRespostaUsuario foreign key (fkUsuario) references usuario (idUsuar
 constraint fkRespostaQuestao foreign key (fkQuestao) references questao (idQuestao),
 constraint pkComposta primary key (fkUsuario, fkQuestao)
 );
+
+insert into questao values
+(default, 'Quanto é 1 mais 1?', );
