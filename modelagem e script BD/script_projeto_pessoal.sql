@@ -12,6 +12,7 @@ dtEntrada datetime
 
 create table topico(
 idTopico int primary key auto_increment,
+ramo varchar(45),
 titulo varchar(45),
 explicacao varchar(2000),
 curiosidade varchar(200)
@@ -39,5 +40,8 @@ constraint fkRespostaQuestao foreign key (fkQuestao) references questao (idQuest
 constraint pkComposta primary key (fkUsuario, fkQuestao)
 );
 
+insert into topico values
+(default, 'Soma');
+
 insert into questao values
-(default, 'Quanto é 1 mais 1?', );
+(default, 'Quanto é 1 mais 1?', '2', '10', '11', '1', '2');
