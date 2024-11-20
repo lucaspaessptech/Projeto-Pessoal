@@ -21,7 +21,11 @@ create table questao(
 idQuestao int primary key auto_increment,
 titulo varchar(45),
 conteudo varchar(45),
-resposta float,
+resposta varchar(15),
+opcao1 varchar(45),
+opcao2 varchar(45),
+opcao3 varchar(45),
+opcao4 varchar(45),
 fkTopico int,
 constraint fkQuestaoTopico foreign key (fkTopico) references topico (idTopico)
 );
