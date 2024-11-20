@@ -19,6 +19,7 @@ curiosidade varchar(200)
 
 create table questao(
 idQuestao int primary key auto_increment,
+titulo varchar(45),
 conteudo varchar(45),
 resposta float,
 fkTopico int,
