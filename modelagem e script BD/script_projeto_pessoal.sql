@@ -15,7 +15,7 @@ idTopico int primary key auto_increment,
 ramo varchar(45),
 titulo varchar(45),
 explicacao varchar(2000),
-curiosidade varchar(200)
+curiosidade varchar(400)
 );
 
 create table questao(
