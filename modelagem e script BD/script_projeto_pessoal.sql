@@ -41,7 +41,7 @@ constraint pkComposta primary key (fkUsuario, fkQuestao)
 );
 
 insert into topico values
-(default, 'Soma');
+(default, 'Aritmética', 'Soma', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic, magnam numquam cupiditate esse excepturi. Fugit dolorum nulla reiciendis voluptatibus temporibus doloremque iusto fugiat voluptate minus. Ducimus blanditiis facere quia.', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam doloremque nobis minima ipsa delectus id quibusdam quia, aliquam voluptatum a illo ab commodi minus iusto hic inventore perferendis cupiditate? Laboriosam.');
 
 insert into questao values
-(default, 'Quanto é 1 mais 1?', '2', '10', '11', '1', '2');
+(default, 'Quanto é 1 mais 1?', '2', '10', '11', '1', '2', 1);
