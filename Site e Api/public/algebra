@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra</title>
+    <link rel="stylesheet" href="/css/explicacaoRamos.css">
+</head>
+<body>
+    
+    <div class="divTotal">
+
+        <div class="barraSup">Placeholder</div>
+        <span class="explicacao">
+            Álgebra é o ramo da matemática que estuda a manipulação formal de equações,
+            operações matemáticas, polinômios e estruturas algébricas.
+            A álgebra é onde você realmente começa a desenvolver raciocínio e
+            reconhecer padrões, pois é nessa parte que você tem que se esforçar para
+            encontrar as manipulações necessárias e correta para resolver uma equação<br>
+        Inclui tópicos como:<br><br>
+
+        <a onclick="redirecionar(10)">Operações básicas</a>
+        <a onclick="redirecionar(11)">Soma;</a><br>
+        <a onclick="redirecionar(12)">Subtração;</a><br>
+        <a onclick="redirecionar(13)">Soma;</a><br>
+        <a onclick="redirecionar(14)">Números inteiros;</a><br>
+        <a onclick="redirecionar(15)">Números racionais;</a><br>
+        <a onclick="redirecionar(16)">Frações e números decimais;</a><br>
+        <a onclick="redirecionar(17)">Porcentagem;</a><br>
+        <a onclick="redirecionar(18)">Potenciação e radiciação;</a><br>
+        <a onclick="redirecionar(19)">Proporção e regra de três.</a><br>
+
+        </span>
+
+    </div>
+
+</body>
+</html>
