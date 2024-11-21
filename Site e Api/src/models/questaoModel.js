@@ -1,7 +1,8 @@
 var database = require("../database/config")
 
-function carregarConteudo(){
-    var instrucaoSql = `SELECT * from topico;`
+function carregarConteudo(id){
+    console.log(id)
+    var instrucaoSql = `SELECT * from topico where idTopico = ${id};`
     return database.executar(instrucaoSql);
 }
 

@@ -6,6 +6,9 @@
     <title>Página de Matéria</title>
     <link rel="stylesheet" href="../css/materia.css">
 </head>
+<script>
+    var idVar = Number(sessionStorage.id);
+</script>
 <body>
     
 <div class="divTotal">
@@ -45,11 +48,18 @@
 </html>
 
 <script>
-
+carregarConteudo()
 function carregarConteudo(){
+    console.log("ok")
     fetch("/questoes/carregarConteudo", {
-        method: "GET"
-    }).then((res) => {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idServer: idVar,
+            })
+        }).then((res) => {
         res.json().then((json) => {
             console.log(json)
             console.log(json[0].ramo)

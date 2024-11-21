@@ -1,7 +1,8 @@
 var questaoModel = require("../models/questaoModel")
 
 function carregarConteudo(req, res){
-    questaoModel.carregarConteudo(req, res).then((resultado) => {res.status(200).json(resultado)})
+    var id = req.body.idServer;
+    questaoModel.carregarConteudo(id).then((resultado) => {res.status(200).json(resultado)})
 }
 
 module.exports = {carregarConteudo};

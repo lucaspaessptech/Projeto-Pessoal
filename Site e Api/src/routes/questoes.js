@@ -3,7 +3,7 @@ var router = express.Router();
 
 var questaoController = require("../controllers/questaoController");
 
-router.get("/carregarConteudo", function (req, res) {
+router.post("/carregarConteudo", function (req, res) {
     questaoController.carregarConteudo(req, res);
 })
 
