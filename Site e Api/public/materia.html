@@ -25,7 +25,7 @@
     </div>
     <div class="divPratica">
         <h3 class="tituloExplicacao">Hora da prática</h3>
-        1.Quanto é 1 mais 1?<br>
+        <span>1.Quanto é 1 mais 1?</span><br>
 <input type="radio" class="respostas" value="10" name="respostas"><label for="">A.10</label><br>
 <input type="radio" class="respostas" value="11" name="respostas"><label for="">A.11</label><br>
 <input type="radio" class="respostas" value="1" name="respostas"><label for="">A.1</label><br>
@@ -34,7 +34,7 @@
 <button onclick="carregarConteudo()">Teste</button>
     </div></div> 
         <div class="divCuriosidade">
-            <h3 class="tituloExplicacao">Curiosidades sobre soma</h3>
+            <h3 class="tituloExplicacao">Curiosidades sobre:</h3>
             <span id="span_curiosidade"></span>
         </div>
     </div>
@@ -50,7 +50,6 @@
 <script>
 carregarConteudo()
 function carregarConteudo(){
-    console.log("ok")
     fetch("/questoes/carregarConteudo", {
         method: "POST",
         headers: {
@@ -67,6 +66,9 @@ function carregarConteudo(){
             h3_titulo.innerHTML = json[0].titulo
             span_explicacao.innerHTML = json[0].explicacao
             span_curiosidade.innerHTML = json[0].curiosidade
+            if(json[0].idQuestao == null){
+
+            }
         })
     })
 }
