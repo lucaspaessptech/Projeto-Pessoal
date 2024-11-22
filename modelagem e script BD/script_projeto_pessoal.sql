@@ -76,3 +76,16 @@ a expressão após resolver os dois ficaria 1+12-3, agora é simples só sobrou 
 1+12=13<br>
 13-3=10<br>
 Então no final a resposta correta era 10.', 'PEMDAS é um acrônimo mnemônico, ou seja, uma sigla que ajuda a lembrar a ordem das operações. Em alguns países, a ordem das operações é lembrada por outros acrônimos, como BODMAS, BIDMAS ou BEDMAS. ');
+
+insert into topico values
+(default, 'Aritmética', 'Potenciação', 'Repetindo o mesmo processo de repetir a operação anterior nos podemos descobrir a próxima operação, se soma repetida da multiplicação, exemplo 
+2+2+2=6 e 2x3 = 6, se repetirmos a multiplicação vamos obter o que? Vamos tentar, 2x2=4, 2x2x2=8, esse processo de multiplicação repetida se chama potenciação ou exponenciação, e usa como
+notação os números pequenos emcima do número base, exmplo: 2³ = 2x2x2 = 8.<br>
+<br>
+Percebe que o comportamento é muito parecido com a multiplicação? Nós usamos um número como base e repetimos ele a quantidade de vezes indicada pelo número menor, só que em vez de usarmos o +
+usamos o x na potência, 2x3 = 2+2+2, 2³ = 2x2x2, só mudamos o operador, mas um ponto importante, diferente da multiplicação ou soma aqui a ordem <b>IMPORTA</b>, 2x3 é a mesma coisa que 3x2 mas 2³ e 3² são diferentes, como vimos
+2³ é 8 3² seguindo a logica seria 3 repetido 2 vezes com um sinal de multiplicação no meio seria 3x3 = 9, só para fixar 3³ é 3x3x3 = 27, 8² = 8x8 = 64.<br>
+<br>
+Agora vamos falar das propriedades da potência que nos permitiram manipular potências em qualquer expressão:<br>
+<br>
+');
