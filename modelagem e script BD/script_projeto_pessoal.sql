@@ -20,7 +20,7 @@ curiosidade varchar(400)
 
 create table questao(
 idQuestao int primary key auto_increment,
-conteudo varchar(200),
+conteudo varchar(400),
 resposta varchar(15),
 opcao1 varchar(45),
 opcao2 varchar(45),
