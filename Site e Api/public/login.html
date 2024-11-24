@@ -11,7 +11,7 @@
     <div class="barraSup">PLACEHOLDER</div>
     <div class="formulario">
         <h2>Login</h2>
-        <input type="text" id="input_email" placeholder="Email ou Nome de Usuário">
+        <input type="text" id="input_email" placeholder="Email">
         <input type="password" id="input_senha" placeholder="Senha">
         <button onclick="entrar()">Logar</button>
         <div class="trocaTela">Já tem conta? <br><a href="cadastro.html">Faça Cadastro</a></div>
@@ -61,7 +61,7 @@ function entrar() {
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "/index.html";
+                        window.location = "/aritmetica.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
