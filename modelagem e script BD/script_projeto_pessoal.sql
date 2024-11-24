@@ -1,5 +1,5 @@
 create database projetoPessoal;
-
+drop database projetoPessoal;
 use projetoPessoal;
 
 create table usuario(
@@ -20,7 +20,7 @@ curiosidade varchar(400)
 
 create table questao(
 idQuestao int primary key auto_increment,
-conteudo varchar(100),
+conteudo varchar(200),
 resposta varchar(15),
 opcao1 varchar(45),
 opcao2 varchar(45),
