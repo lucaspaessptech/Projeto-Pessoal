@@ -47,6 +47,7 @@
 
 <script>
 carregarConteudo()
+menu()
 function carregarConteudo(){
     fetch("/questoes/carregarConteudo", {
         method: "POST",
@@ -74,6 +75,17 @@ function carregarConteudo(){
                 <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas${i}"><label for="">C.${json[i].opcao1}</label><br>
                 <input type="radio" class="respostas" value="${json[i].opcao4}" name="respostas${i}"><label for="">D.${json[i].opcao1}</label><br>`
             }
+        })
+    })
+}
+
+function menu(){
+    fetch("/questoes/menu", {
+        method: "GET",
+        }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+            console.log(json[0].ramo)
         })
     })
 }

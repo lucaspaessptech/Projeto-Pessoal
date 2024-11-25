@@ -5,7 +5,13 @@ function carregarConteudo(id){
     return database.executar(instrucaoSql);
 }
 
+function menu(){
+    var instrucaoSql = `select titulo from topico;`
+    return database.executar(instrucaoSql)
+}
+
 
 module.exports = {
-    carregarConteudo
+    carregarConteudo,
+    menu
 };

@@ -5,4 +5,8 @@ function carregarConteudo(req, res){
     questaoModel.carregarConteudo(id).then((resultado) => {res.status(200).json(resultado)})
 }
 
-module.exports = {carregarConteudo};
+function menu(req, res){
+    questaoModel.menu().then((resultado) => {res.status(200).json(resultado)})
+}
+
+module.exports = {carregarConteudo, menu};

@@ -204,7 +204,8 @@ da incógnita, 2x=18, como no caso queremos descobrir apenas x, devemos nos livr
 Caso os valores cresçam de maneira inversamente proporcional, então em vez de multiplicar cruzado se multiplica direto, exemplo se viajando a 10km/h eu demoro 2 horas para chegar ao destino, quanto demoraria se eu estivesse a 20km/h? 
 Como quando a velocidade crescesse o tempo de viagem diminuiria, os dois valores estão mudando de maneira inversa, então multiplicamos direto: 10=2, 20=x, 20=20x, x=1, então demoraria apenas 1 hora para chegar ao destino.'
 , 'A regra de três foi trazida para a Europa pelos árabes na Idade Média. No século XIII.');
-
+select * from usuario;
+select * from questao;
 insert into questao values
 (default, 'Se 30 ovos são 18 reais, então 45 ovos são:', '24', '24', '20', '16', '19', 10),
 (default, 'Um avião da classe b demora 8 dias para chegar ao destino, um avião da classe a viaja 50% mais rápido,
