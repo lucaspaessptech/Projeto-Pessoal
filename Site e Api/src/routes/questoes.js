@@ -8,7 +8,12 @@ router.post("/carregarConteudo", function (req, res) {
 })
 
 router.get("/menu", function (req, res){
-    questaoController.menu(req,res);
+    questaoController.menu(req, res);
 })
+
+router.post("/respostas", function (req, res){
+    questaoController.responder(req, res);
+}
+)
 
 module.exports = router;

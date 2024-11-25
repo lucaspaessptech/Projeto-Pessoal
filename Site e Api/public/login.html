@@ -54,10 +54,11 @@ function entrar() {
                 console.log(resposta);
 
                 resposta.json().then(json => {
+                    console.log("ok")
                     console.log(json);
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.NOME_USUARIO = json.usuario;
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {

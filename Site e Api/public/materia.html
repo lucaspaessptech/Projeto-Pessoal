@@ -102,15 +102,18 @@ function verificar(){
     var totalQuestoes = 0;
     var questoes = []
     var respostas = []
+    var idQuestoes = []
     var marcado = 0;
+    var idUsuario = sessionStorage.id;
     for(i = 0; i < questoesJson.length; i++){
         totalQuestoes++;
         questoes[i] = document.getElementsByName(`respostas${i}`)
+        idQuestoes.push(questoesJson[i].idQuestao)
     }
     for(i = 0; i < questoes.length; i ++){
         for(j = 0; j < questoes[i].length; j++){
             if(questoes[i][j].checked){
-            respostas[i] = questoes[i][j].value;;
+            respostas[i] = questoes[i][j].value;
             console.log(respostas)
         }
         }
@@ -121,6 +124,21 @@ function verificar(){
             return;
         }
     }
-}
+            fetch("/questoes/respostas", {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                respostasServer: respostas,
+                idquestoesServer: idQuestoes,
+                idusuarioServer: idUsuario
+            })
+        }).then((res) => {
+        res.json().then((json) => {
+
+        })
+    })   
+    }
 
 </script>

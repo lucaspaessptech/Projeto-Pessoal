@@ -9,4 +9,11 @@ function menu(req, res){
     questaoModel.menu().then((resultado) => {res.status(200).json(resultado)})
 }
 
-module.exports = {carregarConteudo, menu};
+function responder(req, res){
+    var respostas = req.body.respostasServer;
+    var questoesID = req.body.idquestoesServer;
+    var usuarioID = req.body.idusuarioServer;
+    questaoModel.responder(respostas, questoesID, usuarioID).then((resultado) => {res.status(200).json(resultado)})
+}
+
+module.exports = {carregarConteudo, menu, responder};
