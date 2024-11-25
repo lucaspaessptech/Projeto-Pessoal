@@ -13,7 +13,7 @@
     
 <div class="divTotal">
     <div class="barraSup">Placeholder</div>
-    <div class="menu">Aritmética</div>
+    <div class="menu" id="menuTopico">Aritmética</div>
     <div class="menu2"></div>
     <div class="div_conteudo">
 
@@ -26,7 +26,7 @@
     </div>
     <div class="divPratica" id="divPratica">
         <h3 class="tituloExplicacao">Hora da prática</h3>
-        <span id="questões">
+        <span id="questoes">
 </span>
 <button onclick="verificar()">Verificar Resposta</button>
 <button onclick="carregarConteudo()">Teste</button>
@@ -69,7 +69,7 @@ function carregarConteudo(){
                 divPratica.innerHTML = "";
             }
             for(i = 0; i < json.length; i++){
-                questões.innerHTML+=`${i+1}.${json[i].conteudo}<br>
+                questoes.innerHTML+=`${i+1}.${json[i].conteudo}<br>
                 <input type="radio" class="respostas" value="${json[i].opcao1}" name="respostas${i}"><label for="">A.${json[i].opcao1}</label><br>
                 <input type="radio" class="respostas" value="${json[i].opcao2}" name="respostas${i}"><label for="">B.${json[i].opcao1}</label><br>
                 <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas${i}"><label for="">C.${json[i].opcao1}</label><br>
@@ -86,6 +86,9 @@ function menu(){
         res.json().then((json) => {
             console.log(json)
             console.log(json[0].ramo)
+            for(i = 1; i <= json.length; i++){
+                menuTopico.innerHTML += `<span onclick="idVar = ${i}, carregarConteudo()">${json[i-1].titulo}</span>`
+            }
         })
     })
 }
