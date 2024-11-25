@@ -104,7 +104,7 @@ function verificar(){
     var respostas = []
     var idQuestoes = []
     var marcado = 0;
-    var idUsuario = sessionStorage.id;
+    var idUsuario = sessionStorage.ID_USUARIO;
     for(i = 0; i < questoesJson.length; i++){
         totalQuestoes++;
         questoes[i] = document.getElementsByName(`respostas${i}`)

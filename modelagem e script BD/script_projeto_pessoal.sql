@@ -1,5 +1,5 @@
 create database projetoPessoal;
-
+drop database projetoPessoal;
 use projetoPessoal;
 
 create table usuario(
@@ -31,12 +31,13 @@ constraint fkQuestaoTopico foreign key (fkTopico) references topico (idTopico)
 );
 
 create table resposta(
+idResposta int unique auto_increment,
 fkUsuario int,
 fkQuestao int,
 respostaUsuario varchar(15),
 constraint fkRespostaUsuario foreign key (fkUsuario) references usuario (idUsuario),
 constraint fkRespostaQuestao foreign key (fkQuestao) references questao (idQuestao),
-constraint pkComposta primary key (fkUsuario, fkQuestao)
+constraint pkComposta primary key (fkUsuario, fkQuestao, idResposta)
 );
 
 insert into topico values

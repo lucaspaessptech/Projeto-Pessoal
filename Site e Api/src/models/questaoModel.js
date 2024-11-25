@@ -22,7 +22,7 @@ function responder(respostas, questoesID, usuarioID){
         }
         console.log(instrucaoSql)
     }
-    // return database.executar(instrucaoSql)
+    return database.executar(instrucaoSql)
 }
 
 
