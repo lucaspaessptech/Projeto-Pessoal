@@ -13,7 +13,7 @@
     
 <div class="divTotal">
     <div class="barraSup">Placeholder</div>
-    <div class="menu" id="menuTopico">Aritmética</div>
+    <div class="menu" id="menuTopico"></div>
     <div class="menu2"></div>
     <div class="div_conteudo">
 
@@ -48,6 +48,7 @@
 <script>
 carregarConteudo()
 menu()
+var questoesJson = [];
 function carregarConteudo(){
     fetch("/questoes/carregarConteudo", {
         method: "POST",
@@ -77,6 +78,7 @@ function carregarConteudo(){
             if(json[0].idQuestao == null){
                 divPratica.style.display = "none";
             }
+            questoesJson = json
         })
     })
 }
@@ -96,11 +98,20 @@ function menu(){
 }
 
 function verificar(){
-    var respostas = document.getElementsByName("respostas");
-    for(i = 0; i < respostas.length; i ++){
-        if(respostas[i].checked){
-            var resposta = respostas[i].value;
-            console.log(resposta)
+    console.log(questoesJson)
+    var totalQuestoes = 0;
+    var questoes = []
+    var respostas = []
+    for(i = 0; i < questoesJson.length; i++){
+        totalQuestoes++;
+        questoes[i] = document.getElementsByName(`respostas${i}`)
+    }
+    for(i = 0; i < questoes.length; i ++){
+        for(j = 0; j < questoes[i].length; j++){
+            if(questoes[i][j].checked){
+            respostas[i] = questoes[i][j].value;;
+            console.log(respostas)
+        }
         }
     }
 }
