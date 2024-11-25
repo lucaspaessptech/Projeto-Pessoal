@@ -28,8 +28,8 @@
         <h3 class="tituloExplicacao">Hora da prática</h3>
         <span id="questoes">
 </span>
-<button onclick="verificar()">Verificar Resposta</button>
-<button onclick="carregarConteudo()">Teste</button>
+<button onclick="verificar()" class="botao" id="verificarR">Verificar Resposta</button>
+<button onclick="carregarConteudo()" class="botao" id="refazer">Refazer questionário</button>
     </div></div> 
         <div class="divCuriosidade">
             <h3 class="tituloExplicacao">Curiosidades sobre:</h3>
@@ -48,8 +48,14 @@
 <script>
 carregarConteudo()
 menu()
+refazer.style.display = "none"
 var questoesJson = [];
 function carregarConteudo(){
+        refazer.style.display = "none";
+        verificarR.style.display = "block"
+    if(isNaN(idVar)){
+        idVar = 1;
+    }
     fetch("/questoes/carregarConteudo", {
         method: "POST",
         headers: {
@@ -66,10 +72,11 @@ function carregarConteudo(){
             h3_titulo.innerHTML = json[0].titulo
             span_explicacao.innerHTML = json[0].explicacao
             span_curiosidade.innerHTML = json[0].curiosidade
+
             questoes.innerHTML = ""
             for(i = 0; i < json.length; i++){
                 divPratica.style.display = "block";
-                questoes.innerHTML+=`${i+1}.${json[i].conteudo}<br>
+                questoes.innerHTML+=`<span id="questao${i}">${i+1}.${json[i].conteudo}</span><br>
                 <input type="radio" class="respostas" value="${json[i].opcao1}" name="respostas${i}"><label for="">A.${json[i].opcao1}</label><br>
                 <input type="radio" class="respostas" value="${json[i].opcao2}" name="respostas${i}"><label for="">B.${json[i].opcao2}</label><br>
                 <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas${i}"><label for="">C.${json[i].opcao3}</label><br>
@@ -93,6 +100,7 @@ function menu(){
             for(i = 1; i <= json.length; i++){
                 menuTopico.innerHTML += `<span onclick="idVar = ${i}, carregarConteudo()">${json[i-1].titulo}</span>`
             }
+            menuTopico.innerHTML += `<a href="/dashboard.html">Ver estatísticas</a>`
         })
     })
 }
@@ -124,6 +132,16 @@ function verificar(){
             return;
         }
     }
+    for(i = 0; i < respostas.length; i++){
+        if(respostas[i] == questoesJson[i].resposta){
+            document.getElementById(`questao${i}`).style.color = "green"
+        }
+        else{
+            document.getElementById(`questao${i}`).style.color = "red"
+        }
+    }
+        refazer.style.display = "block";
+        verificarR.style.display = "none"
             fetch("/questoes/respostas", {
         method: "POST",
         headers: {

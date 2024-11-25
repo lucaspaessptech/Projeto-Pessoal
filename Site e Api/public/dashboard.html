@@ -4,31 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algebra</title>
-    <link rel="stylesheet" href="/css/explicacaoRamos.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <body>
     
     <div class="divTotal">
-
         <div class="barraSup">Placeholder</div>
-        <span class="explicacao">
-            Álgebra é o ramo da matemática que estuda a manipulação formal de equações,
-            operações matemáticas, polinômios e estruturas algébricas.
-            A álgebra é onde você realmente começa a desenvolver raciocínio e
-            reconhecer padrões, pois é nessa parte que você tem que se esforçar para
-            encontrar as manipulações necessárias e correta para resolver uma equação<br>
-        Inclui tópicos como:<br><br>
-
-        <a onclick="redirecionar(12)">Propriedades das operações matemáticas;</a>
-        <a onclick="redirecionar(13)">Expressões algébricas;</a><br>
-        <a onclick="redirecionar(14)">Equação primeiro grau;</a><br>
-        <a onclick="redirecionar(15)">Equação segundo grau;</a><br>
-        <a onclick="redirecionar(16)">Funções;</a><br>
-        <a onclick="redirecionar(17)">Gráficos das funções;</a><br>
-
-        </span>
-
+        <div class="menu" id="menuTopico"></div>
+        <div class="menu2"></div>
+        <div class="div_conteudo">
+            <div class="KPI">A</div>
+            <div class="KPI">B</div>
+            <div class="KPI">C</div>
+        </div>
     </div>
-
+    
 </body>
 </html>
+
+<script>
+menu()
+function menu(){
+    fetch("/questoes/menu", {
+        method: "GET",
+        }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+            console.log(json[0].ramo)
+            for(i = 1; i <= json.length; i++){
+                menuTopico.innerHTML += `<span onclick="sessionStorage.id = ${i}, voltar()">${json[i-1].titulo}</span>`
+            }
+            menuTopico.innerHTML += `<a href="/dashboard.html">Ver estatísticas</a>`
+        })
+    })
+}
+
+function kpi(){
+    
+}
+
+function voltar(){
+    window.location = "materia.html"
+}
+
+</script>
