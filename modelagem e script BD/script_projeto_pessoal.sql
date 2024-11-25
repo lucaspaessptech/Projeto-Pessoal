@@ -34,7 +34,6 @@ create table resposta(
 fkUsuario int,
 fkQuestao int,
 respostaUsuario varchar(15),
-tentativas int,
 constraint fkRespostaUsuario foreign key (fkUsuario) references usuario (idUsuario),
 constraint fkRespostaQuestao foreign key (fkQuestao) references questao (idQuestao),
 constraint pkComposta primary key (fkUsuario, fkQuestao)
