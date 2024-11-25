@@ -24,13 +24,10 @@
     <div class="divExplicacao">
         <span id="span_explicacao"></span>
     </div>
-    <div class="divPratica">
+    <div class="divPratica" id="divPratica">
         <h3 class="tituloExplicacao">Hora da prática</h3>
-        <span>1.Quanto é 1 mais 1?</span><br>
-<input type="radio" class="respostas" value="10" name="respostas"><label for="">A.10</label><br>
-<input type="radio" class="respostas" value="11" name="respostas"><label for="">A.11</label><br>
-<input type="radio" class="respostas" value="1" name="respostas"><label for="">A.1</label><br>
-<input type="radio" class="respostas" value="2" name="respostas"><label for="">A.2</label><br>
+        <span id="questões">
+</span>
 <button onclick="verificar()">Verificar Resposta</button>
 <button onclick="carregarConteudo()">Teste</button>
     </div></div> 
@@ -68,7 +65,14 @@ function carregarConteudo(){
             span_explicacao.innerHTML = json[0].explicacao
             span_curiosidade.innerHTML = json[0].curiosidade
             if(json[0].idQuestao == null){
-
+                divPratica.innerHTML = "";
+            }
+            for(i = 0; i < json.length; i++){
+                questões.innerHTML+=`${i+1}.${json[i].conteudo}<br>
+                <input type="radio" class="respostas" value="${json[i].opcao1}" name="respostas"><label for="">A.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao2}" name="respostas"><label for="">B.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas"><label for="">C.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao4}" name="respostas"><label for="">D.${json[i].opcao1}</label><br>`
             }
         })
     })
