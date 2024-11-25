@@ -19,6 +19,7 @@ body{
     background-color: #FFA500;
     justify-content: center;
     align-items: center;
+    position: sticky;
 }
 .menu{
     background-color: #FFA500;

@@ -69,10 +69,10 @@ function carregarConteudo(){
             }
             for(i = 0; i < json.length; i++){
                 questões.innerHTML+=`${i+1}.${json[i].conteudo}<br>
-                <input type="radio" class="respostas" value="${json[i].opcao1}" name="respostas"><label for="">A.${json[i].opcao1}</label><br>
-                <input type="radio" class="respostas" value="${json[i].opcao2}" name="respostas"><label for="">B.${json[i].opcao1}</label><br>
-                <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas"><label for="">C.${json[i].opcao1}</label><br>
-                <input type="radio" class="respostas" value="${json[i].opcao4}" name="respostas"><label for="">D.${json[i].opcao1}</label><br>`
+                <input type="radio" class="respostas" value="${json[i].opcao1}" name="respostas${i}"><label for="">A.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao2}" name="respostas${i}"><label for="">B.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao3}" name="respostas${i}"><label for="">C.${json[i].opcao1}</label><br>
+                <input type="radio" class="respostas" value="${json[i].opcao4}" name="respostas${i}"><label for="">D.${json[i].opcao1}</label><br>`
             }
         })
     })
