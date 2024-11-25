@@ -1,5 +1,5 @@
 create database projetoPessoal;
-drop database projetoPessoal;
+
 use projetoPessoal;
 
 create table usuario(

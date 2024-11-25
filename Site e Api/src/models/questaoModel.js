@@ -14,7 +14,7 @@ function responder(respostas, questoesID, usuarioID){
     console.log(questoesID)
     console.log(respostas)
     console.log(usuarioID)
-    var instrucaoSql = `insert into resposta values `
+    var instrucaoSql = `insert into resposta (fkUsuario, fkQuestao, respostaUsuario) values `
     for(i = 0; i < respostas.length; i++){
         instrucaoSql += `(${usuarioID}, ${questoesID[i]}, '${respostas[i]}'),`
         if(i == respostas.length-1){
