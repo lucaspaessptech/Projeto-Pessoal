@@ -33,6 +33,7 @@ body{
     flex: 1;
     float: left;
     position: fixed;
+    font-size: 200%;
 }
 .menu2{
     min-width: 20%;
