@@ -47,7 +47,7 @@ body{
     float: left;
     visibility: hidden;
 }
-.div_conteudo{
+.divKpi{
     display: flex;
 }
 .KPI{
@@ -55,10 +55,15 @@ body{
     background-color: #FFA500;
     margin: 2%;
     width: 31%;
-    height: 15%;
+    min-height: 15%;
     padding: 2%;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    font-size: 250%;
+    font-size: 220%;
+}
+.divGrafico{
+    display: flex;
+    justify-self: center;
+    width: 60%;
 }

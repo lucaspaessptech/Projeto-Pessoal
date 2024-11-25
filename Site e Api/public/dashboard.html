@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Algebra</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
     
     <div class="divTotal">
         <div class="barraSup">Placeholder</div>
         <div class="menu" id="menuTopico"></div>
         <div class="menu2"></div>
-        <div class="div_conteudo">
-            <div class="KPI">A</div>
-            <div class="KPI">B</div>
-            <div class="KPI">C</div>
+        <div class="divKpi">
+            <div class="KPI" id="kpiTotal"></div>
+            <div class="KPI" id="kpiAcerto"></div>
+            <div class="KPI" id="kpiTopico"></div>
         </div>
+        <div class="divGrafico"><canvas id="myChart"></canvas></div>
     </div>
     
 </body>
@@ -24,6 +26,9 @@
 
 <script>
 menu()
+kpi1()
+var dado1 = 0;
+var dado3 = 0;
 function menu(){
     fetch("/questoes/menu", {
         method: "GET",
@@ -39,8 +44,116 @@ function menu(){
     })
 }
 
-function kpi(){
-    
+function kpi1(){
+    var idUsuario = sessionStorage.ID_USUARIO;
+    fetch("/dashboard/dados1", {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idusuarioServer: idUsuario,
+            })
+        }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+            dado1 = json[0].resposta1
+            kpiTotal.innerHTML = `Total de questões respondidas: <b>${dado1}</b>`
+            kpi2()
+        })
+    })
+}
+
+function kpi2(){
+    var idUsuario = sessionStorage.ID_USUARIO;
+    fetch("/dashboard/dados2", {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idusuarioServer: idUsuario,
+            })
+        }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+            var dado2 = json[0].resposta2
+            kpiAcerto.innerHTML = `Acertos em todas as questões: <b>${(dado2/dado1*100).toFixed(2)}%</b>`
+            kpi3()
+        })
+    })
+}
+
+function kpi3(){
+    var idUsuario = sessionStorage.ID_USUARIO;
+    fetch("/dashboard/dados3", {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idusuarioServer: idUsuario,
+            })
+        }).then((res) => {
+        res.json().then((json) => {
+            dado3 = json
+            console.log("dado3", dado3)
+            kpi4()
+        })
+    })
+}
+
+function kpi4(){
+    var idUsuario = sessionStorage.ID_USUARIO;
+    fetch("/dashboard/dados4", {
+        method: "POST",
+        headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idusuarioServer: idUsuario,
+            })
+        }).then((res) => {
+        res.json().then((json) => {
+            console.log(json)
+           var dado4 = json
+           var menor = 10**1000;
+           for(i = 0; i < dado3.length; i++){
+            if(dado3[i].resposta3/dado4[i].resposta4 < menor){
+                menor=dado3[i].resposta3/dado4[i].resposta4
+                var indiceMenor = i
+            }
+           }
+           kpiTopico.innerHTML = `Topico com maior quantidade de erros: ${dado3[indiceMenor].titulo}`
+
+           const ctx = document.getElementById('myChart');
+           var eixoX = []
+           var eixoY = []
+           for(i = 0; i < dado4.length; i++){
+            eixoX.push(dado4[i]. titulo)
+            eixoY.push(Number(((dado3[i].resposta3/dado4[i].resposta4)*100).toFixed(2)))
+           }
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: eixoX,
+      datasets: [{
+        label: 'Quantidade de acertos em % em cada topico',
+        data: eixoY,
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+        })
+    })
 }
 
 function voltar(){
