@@ -37,7 +37,7 @@ function menu(){
             console.log(json)
             console.log(json[0].ramo)
             for(i = 1; i <= json.length; i++){
-                menuTopico.innerHTML += `<span onclick="sessionStorage.id = ${i}, voltar()">${json[i-1].titulo}</span>`
+                menuTopico.innerHTML += `<span onclick="sessionStorage.id = ${i}, voltar()" class="menuItem">${json[i-1].titulo}</span>`
             }
             menuTopico.innerHTML += `<a href="/dashboard.html">Ver estatísticas</a>`
         })

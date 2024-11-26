@@ -6,8 +6,7 @@ create table usuario(
 idUsuario int primary key auto_increment,
 nome varchar(45),
 email varchar(45),
-senha char(64),
-dtEntrada datetime
+senha char(64)
 );
 
 create table topico(

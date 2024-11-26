@@ -39,17 +39,50 @@ function cadastrar() {
 
     // Verificando se há algum campo em branco
     if (
-      usuario == "" ||
-      email == "" ||
-      senha == "" ||
+      usuario == "" &&
+      email == "" &&
+      senha == "" &&
       confirmacaoSenha == ""
     ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      alert("Mensagem de erro para todos os campos em branco")
 
-      finalizarAguardar();
       return false;
+    }
+    if (!email.includes("@")){
+      alert("Email inválido")
+      return
+    }
+    var contemMaiusculo = senha != senha.toLowerCase()
+    var contemMinusculo = senha != senha.toUpperCase()
+    var contemNumero = false;
+    for(i = 0; i < senha.length; i++){
+      if(!isNaN(senha[i])){
+        contemNumero = true;
+      }
+    }
+    if(!contemMaiusculo){
+      alert("Senha precisa de uma letra maiúscula")
+      return
+    }
+    if(!contemMinusculo){
+      alert("Senha precisa de uma letra minúscula")
+      return
+    }
+    if(!contemNumero){
+      alert("Senha precisa de um número")
+      return
+    }
+    if(usuario == ""){
+      alert("Nome de usuário não pode ser vazio")
+      return
+    }
+    if(senha != confirmacaoSenha){
+      alert("Senhas não estão iguais")
+      return
+    }
+    if(senha.length < 8){
+      alert("Senha deve ter mais que 7 digitos")
+      return
     }
 
     // Enviando o valor da nova input

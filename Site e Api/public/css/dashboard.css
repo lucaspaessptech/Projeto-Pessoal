@@ -14,12 +14,14 @@ body{
 }
 .barraSup{
     display: flex;
+    position: fixed;
     height: 15%;
+    width: 100%;
     font-size: 400%;
     background-color: #FFA500;
     justify-content: center;
     align-items: center;
-    position: sticky;
+    z-index: 5;
 }
 .menu{
     background-color: #FFA500;
@@ -29,11 +31,12 @@ body{
     min-height: 84%;
     display: flex;
     flex-direction: column;
-    border: solid 3px;
+    border: solid 5px;
     flex: 1;
     float: left;
     position: fixed;
     font-size: 200%;
+    margin-top: 15vh;
 }
 .menu2{
     min-width: 20%;
@@ -49,6 +52,7 @@ body{
 }
 .divKpi{
     display: flex;
+    margin-top: 15vh;
 }
 .KPI{
     display: flex;
@@ -66,4 +70,8 @@ body{
     display: flex;
     justify-self: center;
     width: 60%;
+}
+.menuItem:hover{
+    box-shadow: 2px 2px;
+    font-weight: bold;
 }
