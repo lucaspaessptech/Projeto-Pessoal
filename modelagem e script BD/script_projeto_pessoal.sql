@@ -105,7 +105,7 @@ insert into questao values
 (default, 'Eduardo possui 10 coxinhas, comeu 2, dividiu por 2 + 4, qual expressão representa essa frase?', '(10-2)/(2+4)', '10-2/2+4', '(10-2)/2+4', '10-(2/2)+4', '(10-2)/(2+4)', 5);
 
 insert into topico values
-(default, 'Aritmética', 'Números Reais', 'O grupo de números que trabalhamos até agora pertence a um grupo muit maior chamado números reais, vamos passar sobre os conjuntos dos números:<br>
+(default, 'Aritmética', 'Números Reais', 'O grupo de números que trabalhamos até agora pertence a um grupo muito maior chamado números reais, vamos passar sobre os conjuntos dos números:<br>
 Números naturais: Possui esse nome por ser os números naturais que usamos para <u>contar</u> 0,1,2,3,4,5 e por ai vai até o infinito, numeros naturais são representados por um
 N;<br>
 Números inteiros: São números que não possuem partes decimais, "partes quebradas", e inclui números negativos e positivos -3,-2,-1,0,1,2,3 continuando infinitamente para o lado negativo e positivo, números inteiros são representados por Z,
@@ -177,6 +177,8 @@ uma observação que podemos fazer dessa propriedade é que se possuimos bases d
 Qualquer base negativa elevado a um número par vira um número positivo, qualquer base negativa elevado a um número impar continua negativa exemplo: (-2)²=4, (-2)³=-8, isso ocore por conta da 
 regra de sinais, sinais repetidos pares igual a positivo (-).(-) = + e sinais repetidos impar igual a negativo (-).(-).(-) = - OBSERVAÇÃO: se o sinal não estiver dentro
 de um parenteses o sinal é desconsiderado na potência -2²=-(2x2)=-4;<br>
+Potência de potência multiplicamos os expoentes, exemplo: (2²)³=2⁵;<br>
+Expoentes fracionários são equivalente a raizes quadradas, exemplo: 4¹ᐟ² = √4 = 2, a lógica por trás de uma raiz quadrada é pensar que número vezes ele mesmo é igual a 4? Esse seria o 2 porque 2x2 = 4;<br>
 ', 'A notação exponencial, que utiliza numerais indo-arábicos como expoentes, foi criada por volta de 1637 pelo matemático francês René Descartes.');
 
 insert into questao values
