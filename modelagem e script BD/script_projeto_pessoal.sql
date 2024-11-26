@@ -62,9 +62,9 @@ Os símbolos que representam a multiplicação são o "X", o "." e o "*" mas os 
 exemplo 2x10=20.', 'O símbolo de multiplicação × foi introduzido por William Oughtred em 1631, no livro Clavis Matematicae.');
 
 insert into questao values
-(default, 'Quanto é 8x10?', '80', '40', '88', '36', '54', 3),
+(default, 'Quanto é 8x10?', '80', '40', '88', '80', '54', 3),
 (default, 'Quanto é 4x7?', '28', '6', '18', '08', '28', 3),
-(default, 'Quanto é 8x15', '16', '13', '17', '6', '16', 3),
+(default, 'Quanto é 8x15', '120', '120', '170', '600', '160', 3),
 (default, 'João quer comprar 4 camisetas de 20 reais cada e 3 calças de 25 reais cada, quanto custa o total?', '155', '155', '170', '100', '123', 3),
 (default, 'Lucas estuda 6 horas por dia 6 dias por semana, quantas horas ele estuda em um mês?', '144', '130', '170', '144', '200', 3);
 
@@ -148,9 +148,9 @@ exemplo 4/5 x 3/8 em frações simplesmente multiplicamos 4x3=12, 5x8=40, então
 , 'A ideia de fração foi inventada pelos egípcios há cerca de 3000 anos antes de Cristo, os egípcios usavam frações para representar os números fracionários, que surgiram para resolver o problema de medir terrenos às margens do rio Nilo, que inundavam entre junho e setembro.');
 
 insert into questao values
-(default, 'Quanto é 12/3(3+1)?', '16', '16', '1', '18', '3', 7),
-(default, 'Quanto é (14*4/4+4)/2', '9', '10', '28', '9', '18', 7),
-(default, 'Eduardo possui 10 coxinhas, comeu 2, dividiu por 2 + 4, qual expressão representa essa frase?', '(10-2)/(2+4)', '10-2/2+4', '(10-2)/2+4', '10-(2/2)+4', '(10-2)/(2+4)', 7);
+(default, 'Quanto é 0,5x0,4?', '0,8', '1', '0,8', '1,2', '2', 7),
+(default, 'Quanto é 1/2+4/10', '9/10', '9/10', '11/6', '2', '7/2', 7),
+(default, '(1/2+4/4)/(2/5)', '15/4', '6/1', '15/4', '30/9', '15/2', 7);
 
 insert into topico values
 (default, 'Aritmética', 'Potenciação', 'Repetindo o mesmo processo de repetir a operação anterior nos podemos descobrir a próxima operação, se soma repetida da multiplicação, exemplo 
