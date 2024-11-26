@@ -96,3 +96,13 @@ h3{
 .teste{
     max-width: 70%;
 }
+.menuItem:hover{
+    box-shadow: 2px 2px;
+    font-weight: bold;
+}
+.botao{
+    background-color: #FFA500;
+    font-size: 200%;
+    padding: 15px;
+    border-radius: 15px;
+}

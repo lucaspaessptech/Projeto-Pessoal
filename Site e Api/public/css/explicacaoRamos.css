@@ -30,3 +30,6 @@ body{
     background-color: #D9D9D9;
     flex-direction: column;
 }
+.topico:hover{
+    font-weight: bold;
+}

@@ -210,4 +210,3 @@ insert into questao values
 (default, 'Um avião da classe b demora 8 dias para chegar ao destino, um avião da classe a viaja 50% mais rápido,
 quanto tempo o avião da classe b vai demorar para a mesma viagem?', '5,33 dias', '6 dias', '5,33 dias', '6,2 dias', '7,1 dias', 10),
 (default, '3 pintores pintam uma parede em 6 horas, 5 pintores pintariam a mesma parede em quanto tempo?', '3,60 horas', '4,20 horas', '5 horas', '3,60 horas', '4 horas', 10);
-select * from resposta;
