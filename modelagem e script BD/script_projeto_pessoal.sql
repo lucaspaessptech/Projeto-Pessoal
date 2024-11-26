@@ -183,8 +183,8 @@ Expoentes fracionários são equivalente a raizes quadradas, exemplo: 4¹ᐟ² =
 
 insert into questao values
 (default, 'Quanto é (2³-2²)x4?', '2³', '2³', '2', '2²', '4', 8),
-(default, 'Quanto é (14*4/4+4)/2', '9', '10', '28', '9', '18', 8),
-(default, 'Eduardo possui 10 coxinhas, comeu 2, dividiu por 2 + 4, qual expressão representa essa frase?', '(10-2)/(2+4)', '10-2/2+4', '(10-2)/2+4', '10-(2/2)+4', '(10-2)/(2+4)', 8);
+(default, 'Quanto é 9³-3⁴', '0', '0', '27', '9', '18', 8),
+(default, 'Quanto é 2¹⁰-2⁹', '2', '4', '1024', '512', '2', 8);
 
 insert into topico values
 (default, 'Aritmética', 'Porcentagem', 'Porcentagem significa divisão por cem, porcentagem é usada para encontrarmos valores proporcionais, como descontos, o símbolo da porcentagem é "%", como indicado anterior

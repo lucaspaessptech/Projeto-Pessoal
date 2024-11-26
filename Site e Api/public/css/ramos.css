@@ -23,6 +23,7 @@ body{
 h1{
     justify-self: center;
     align-self: center;
+    font-size: 300%;
 }
 .divTexto{
     font-size: 150%;
